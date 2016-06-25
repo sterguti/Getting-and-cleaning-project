@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"Readme\"\nauthor: \"Dra. Esther Gutierrez\"\ndate: \"25 de junio de 2016\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n##Getting and Cleaning Data - Course Project\n\nThis repository hosts the R code and documentation files for the Data Science's project of the course \"Getting and Cleaning data\"\n\n<http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>\n\n#Data\n\nOne of the most exciting areas in all of data science right now is wearable computing - see for example this article . Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained\n\n\nThe dataset being used is: Human Activity Recognition Using Smartphones\n\nsee <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>\n\n#Files\n\nCodeBook.md describes the variables, the data, and any transformations or work that was performed to clean up the data.\n\nrun_analysis.R contains all the code to perform the analyses described in the 5 steps:\n\n  1.  Merges the training and the test sets to create one data set.\n  2.  Extracts only the measurements on the mean and standard deviation for each measurement.\n  3.  Uses descriptive activity names to name the activities in the data set \n  4.  Appropriately labels the data set with descriptive variable names.\n  5.  From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.\n\nThe output of the 5th step is called av_data.txt.\n",
+    "created" : 1466867089989.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1877689929",
+    "id" : "E3671CAF",
+    "lastKnownWriteTime" : 1466878242,
+    "last_content_update" : -2147483648,
+    "path" : "~/Getting_and_cleaning_project/Readme.Rmd",
+    "project_path" : "Readme.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

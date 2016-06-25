@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(dplyr)\nlibrary(tidyr)\n\nfilename <- \"getdata_dataset.zip\"\ndir <- \"./UCI HAR Dataset/\"\n## Download and unzip the dataset:\nif (!file.exists(filename)){\n  fileURL <- \"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip\"\n  download.file(fileURL, filename, method=\"curl\")\n}  \nif (!file.exists(\"UCI HAR Dataset\")) { \n  unzip(filename) \n}\n\n\n# Step 1\n# Merge the training and test sets to create one data set\n######################################################################################\n\n# Load activity labels + features\nx_train <- read.table(paste(dir,\"train/X_train.txt\", sep=\"\"))\ny_train <- read.table(paste(dir,\"train/y_train.txt\",sep=\"\"))\nsubject_train <- read.table(paste(dir,\"train/subject_train.txt\",sep=\"\"))\n\nx_test <- read.table(paste(dir, \"test/X_test.txt\",sep=\"\"))\ny_test <- read.table(paste(dir, \"test/y_test.txt\", sep=\"\"))\nsubject_test <- read.table(paste(dir, \"test/subject_test.txt\",sep=\"\"))\n\n# create 'x', 'y' and 'subject' data set\nx_data <- rbind(x_train, x_test)\ny_data <- rbind(y_train, y_test)\ny_data_p <- rbind(y_train, y_test)\nsubject_data <- rbind(subject_train, subject_test)\n\n# Step 2\n#Extracts only the measurements on the mean and standard deviation for each measurement.\n########################################################################################\n\nfeatures <- read.table(paste(dir, \"features.txt\", sep=\"\"))\n\n# get only columns with mean() or std() in their names\n\nmandstd_features <- grep(\"-(mean|std).*\", features[, 2])\n#mandstd_features <- grep(\".*mean.*|.*std.*\", features[,2])\n\n# subset the desired columns\nx_data <- x_data[, mandstd_features]\n\n# correct the column names\nnames(x_data) <- features[mandstd_features, 2]\n\n\n# Step 3\n#3.  Uses descriptive activity names to name the activities in the data set \n########################################################################################\n\nlabels <- read.table(paste(dir, \"activity_labels.txt\", sep=\"\"))\n\ny_data[, 1]\ny_data[, 1] <- labels[y_data[, 1], 2]\n\n\n\n# Step 4\n#Appropriately labels the data set with descriptive variable names.\n########################################################################################\n\nnames(y_data) <- \"activity\"\nnames(subject_data) <- \"Subject\"\n\nall_data <- cbind(x_data, y_data, subject_data)\n\n\n# Step 5\n#From the data set in step 4, creates a second, independent tidy data set with the average\n#of each variable for each activity and each subject.\n#######################################################################################\n\n\nnew_data<- aggregate(. ~ Subject - activity, data = all_data, mean) \na_data<- tbl_df(arrange(dataAggr,Subject,activity))\n\n# Export the tidyData set \nwrite.table(a_data, './av_data.txt',row.names=TRUE,sep='\\t')\n\n\n\n",
+    "created" : 1466868597517.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3954429705",
+    "id" : "64D75C17",
+    "lastKnownWriteTime" : 1466877992,
+    "last_content_update" : -2147483648,
+    "path" : "~/Getting_and_cleaning_project/run_analysis.R",
+    "project_path" : "run_analysis.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

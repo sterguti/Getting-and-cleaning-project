@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"CodeBook\"\nauthor: \"Dra. Esther Gutierrez\"\ndate: \"25 de junio de 2016\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n##Code Book\n\nThis code book summarizes the resulting data fields in av_data.txt\n\n\nFor each record it is provided:\n======================================\n\n- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.\n- Triaxial Angular velocity from the gyroscope. \n- A 561-feature vector with time and frequency domain variables. \n- Its activity label. \n- An identifier of the subject who carried out the experiment.\n\nThe dataset includes the following files:\n=========================================\n\n- 'features_info.txt': Shows information about the variables used on the feature vector.\n\n- 'features.txt': List of all features.\n\n- 'activity_labels.txt': Links the class labels with their activity name.\n\n- 'train/X_train.txt': Training set.\n\n- 'train/y_train.txt': Training labels.\n\n- 'test/X_test.txt': Test set.\n\n- 'test/y_test.txt': Test labels.\n\nThe following files are available for the train and test data. Their descriptions are equivalent. \n\n- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. \n\n- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' files for the Y and Z axis. \n\n- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. \n\n- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. \n\n#New variables\n\n- x_train, y_train, subject_train, x_test, y_test and subject_test contain the data from the new files.\n\n- x_data, y_data and subject_data contain the training and the test sets in one data set.\n\n- features List of all features of the data.\n\n- labels are the names of the activities.\n\n#Data Result\n\n- av_data.txt contains the relevant averages.\n\n",
+    "created" : 1466868852255.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2728503984",
+    "id" : "8DC4ECEF",
+    "lastKnownWriteTime" : 1466878231,
+    "last_content_update" : -2147483648,
+    "path" : "~/Getting_and_cleaning_project/Codebook.Rmd",
+    "project_path" : "Codebook.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
